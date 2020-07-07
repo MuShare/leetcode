@@ -18,6 +18,7 @@ public class Solution20Test {
     public void testFalse() {
         Assert.assertFalse(solution20.isValid("(]"));
         Assert.assertFalse(solution20.isValid("([)]"));
+        Assert.assertFalse(solution20.isValid("]"));
     }
 
 }

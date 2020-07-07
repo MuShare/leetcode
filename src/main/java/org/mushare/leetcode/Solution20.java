@@ -9,21 +9,21 @@ public class Solution20 {
             char c = s.charAt(i);
             switch (c) {
                 case ')':
-                    if (stack.peek() == '(') {
+                    if (!stack.isEmpty() && stack.peek() == '(') {
                         stack.pop();
                     } else {
                         stack.push(')');
                     }
                     break;
                 case ']':
-                    if (stack.peek() == '[') {
+                    if (!stack.isEmpty() && stack.peek() == '[') {
                         stack.pop();
                     } else {
                         stack.push(']');
                     }
                     break;
                 case '}':
-                    if (stack.peek() == '{') {
+                    if (!stack.isEmpty() && stack.peek() == '{') {
                         stack.pop();
                     } else {
                         stack.push('}');
