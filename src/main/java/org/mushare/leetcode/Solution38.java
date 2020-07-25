@@ -1,17 +1,28 @@
 package org.mushare.leetcode;
 
 public class Solution38 {
-    public int searchInsert(int[] nums, int target) {
-        int i = 0;
-        if (target > nums[nums.length - 1]) {
-            i += 1;
+    public String countAndSay(int n) {
+        if (n == 1) {
+            return "1";
         }
-        while (i < nums.length) {
-            if (target <= nums[i]) {
-                break;
+        String lastResult = countAndSay(n - 1);
+        String result = "";
+        Character currentCharacter = null;
+        int num = 1;
+        for (char c : lastResult.toCharArray()) {
+            if (currentCharacter == null) {
+                currentCharacter = c;
+                continue;
             }
-            i++;
+            if (currentCharacter == c) {
+                num++;
+            } else {
+                result += num + String.valueOf(currentCharacter);
+                currentCharacter = c;
+                num = 1;
+            }
         }
-        return i;
+        result += num + String.valueOf(currentCharacter);
+        return result;
     }
 }
