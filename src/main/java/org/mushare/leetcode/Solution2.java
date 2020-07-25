@@ -11,8 +11,8 @@ public class Solution2 {
         ListNode result = null, tmp = null;
         int n = 0;
         int i = 0;
-        while (l1 != null && l2 != null) {
-            n = l1.val + l2.val + i;
+        while (l1 != null || l2 != null) {
+            n = (l1 != null ? l1.val : 0) + (l2 != null ? l2.val : 0) + i;
             if (n > 9) {
                 i = 1;
                 n -= 10;
@@ -25,35 +25,14 @@ public class Solution2 {
                 tmp.next = new ListNode(n);
                 tmp = tmp.next;
             }
-            l1 = l1.next;
-            l2 = l2.next;
-        }
-        ListNode last = null;
-        if (l1 != null) {
-            last = l1;
-        }
-        if (l2 != null) {
-            last = l2;
-        }
-        if (last == null) {
-            if (i == 0) {
-                return result;
+            if (l1 != null) {
+                l1 = l1.next;
             }
-            tmp.next = new ListNode(i);
-            return result;
-        }
-        while (last != null) {
-            n = last.val + i;
-            if (n > 9) {
-                i = 1;
-                n -= 10;
-            } else {
-                i = 0;
+            if (l2 != null) {
+                l2 = l2.next;
             }
-            tmp.next = new ListNode(n);
-            tmp = tmp.next;
-            last = last.next;
         }
+
         if (i != 0) {
             tmp.next = new ListNode(i);
         }
