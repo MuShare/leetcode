@@ -1,10 +1,5 @@
 package org.mushare.leetcode;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 public class Solution1389 {
     public int[] createTargetArray(int[] nums, int[] index) {
         int[] result = new int[nums.length];
