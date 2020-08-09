@@ -15,7 +15,8 @@ public class LearnListTest {
         Assert.assertEquals(learnList.findAllPositiveNumbersAndSumIntegerPart(new Double[] {-1.1, 0.0, 1.2, 2.6}), 3);
     }
 
-    @Test void testCalculateAvgGrade() {
+    @Test
+    public void testCalculateAvgGrade() {
         List<Person> persons = new ArrayList<>();
         persons.add(new Person(1, 97));
         persons.add(new Person(3, 87));
@@ -25,6 +26,7 @@ public class LearnListTest {
         persons.add(new Person(2, 77));
         persons.add(new Person(1, 67));
         persons.add(new Person(1, 90));
-        
+
+        Assert.assertEquals(learnList.getAveGrade(persons,1),85);
     }
 }
